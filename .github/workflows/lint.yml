@@ -27,8 +27,10 @@ on:
     branches:
       - main
     paths:
-      - compositional_skills/**/qna.yaml
-      - knowledge/**/qna.yaml
+      - compositional_skills/**/*.yaml
+      - compositional_skills/**/*.yml
+      - knowledge/**/*.yaml
+      - knowledge/**/*.yml
 
 jobs:
   lint:
@@ -45,6 +47,12 @@ jobs:
         with:
           files: |
             **/qna.yaml
+
+      - name: "Verify qna.yaml file name"
+        if: steps.changed-files.outputs.any_changed != 'true'
+        run: |
+          echo "Could not find a 'qna.yaml' file" 1>&2
+          exit 1
 
       - name: "Run YAML lint"
         if: steps.changed-files.outputs.any_changed == 'true'
