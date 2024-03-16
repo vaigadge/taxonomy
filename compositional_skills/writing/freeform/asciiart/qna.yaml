@@ -1,0 +1,75 @@
+created_by: pridolfi
+seed_examples:
+- answer: '
+               /\
+              /**\
+             /****\    /\
+            /******\  /**\
+           /        \/    \
+          /                \/\
+         /      __         /  \
+        /      /  \       /    \
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
+  question: Draw mountains with ASCII art.
+  attribution:
+    - source: self-authored
+      license: Apache-2.0
+- answer: '
+                 /\
+                /  \
+               (    )
+              /    * \
+             ( *      )
+            /          \
+           (    *       )
+          /          *   \
+         (----------------)
+                |  |
+                | ||
+                |  |
+                |* |
+              ~~~~~~~~'
+  question: Draw a tree with ASCII art.
+  attribution:
+    - source: self-authored
+      license: Apache-2.0
+- answer: '
+    --------------------------
+    |                        |
+    |                        |
+    |                        |
+    |                        |
+    |                        |
+    |                        |
+    |                        |
+    |                        |
+    |                        |
+    --------------------------'
+  question: Draw a square with ASCII art.
+  attribution:
+    - source: self-authored
+      license: Apache-2.0
+- answer: '
+        /\
+       /  \
+      /    \
+     /      \
+    /        \
+   /__________\'
+  question: Draw a triangle with ASCII art.
+  attribution:
+    - source: self-authored
+      license: Apache-2.0
+- answer: '
+        /\     /\
+       /  \___/  \
+      /           \
+     (  ()     ()  )
+    >(-     o     -)<
+       (___/ \___)
+        (_______)'
+  question: Draw a cat with ASCII art.
+  attribution:
+    - source: self-authored
+      license: Apache-2.0
+task_description: 'This task enables/improves drawing using ASCII art.'
