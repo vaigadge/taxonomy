@@ -2,6 +2,8 @@
 
 import argparse, json
 
+TAXONOMY_REPO_URL = "https://github.com/instruct-lab/taxonomy"
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -15,27 +17,32 @@ def main():
     )
     args = parser.parse_args()
 
+    with open(args.fp_in, 'r') as f:
+        data = json.load(f)
+
     number_list = []
     if args.prs:
         number_list = [int(num) for num in args.prs.split(',')]
 
-    with open(args.fp_in, 'r') as f:
-        data = json.load(f)
+    if number_list:
+        data = [d for d in data if d["number"] in number_list]
 
     f = open(args.fp_out, "w")
     f.write("#!/usr/bin/env bash\n")
     f.write("\n")
-    f.write(f'echo "making branch with {len(data)} candidate PRs"')
+    f.write(f"echo 'making branch with {len(data)} candidate PRs'")
     f.write("\n")
     f.write("git checkout -b merge-candidates\n")
     f.write("\n")
     for d in data:
-        if number_list and d["number"] not in number_list:
-            continue
-        a, b, c = d["author"]["login"], d["headRepository"]["name"], d["headRefName"]
-        f.write(f"git remote add {a} git@github.com:{a}/{b}.git\n")
-        f.write(f"git fetch {a}\n")
-        f.write(f"git merge --no-edit {a}/{c}\n")
+        pr_number = d["number"]
+        gh_login = d["author"]["login"]
+        repo_name = d["headRepository"]["name"]
+        ref_name = d["headRefName"]
+        f.write(f"echo 'merging PR #{pr_number} ({TAXONOMY_REPO_URL}/pull/{pr_number})'\n")
+        f.write(f"git remote add {gh_login} git@github.com:{gh_login}/{repo_name}.git\n")
+        f.write(f"git fetch {gh_login}\n")
+        f.write(f"git merge --no-edit {gh_login}/{ref_name}\n")
         f.write("\n")
     f.close()
 
