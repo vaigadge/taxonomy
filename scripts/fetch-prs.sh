@@ -9,4 +9,4 @@ else
     filter="--label 'triage-approved'"
 fi
 
-eval "gh --repo instruct-lab/taxonomy pr list --limit 10000 $filter --json number,author,headRepository,headRefName > tmp/pr-list.json"
+eval "gh --repo instruct-lab/taxonomy pr list --limit 10000 $filter --json number,title,author,headRepository,headRefName > tmp/pr-list.json"

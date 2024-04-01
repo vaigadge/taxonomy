@@ -36,13 +36,14 @@ def main():
     f.write("\n")
     for d in data:
         pr_number = d["number"]
+        pr_title = d["title"]
         gh_login = d["author"]["login"]
         repo_name = d["headRepository"]["name"]
         ref_name = d["headRefName"]
         f.write(f"echo 'merging PR #{pr_number} ({TAXONOMY_REPO_URL}/pull/{pr_number})'\n")
         f.write(f"git remote add {gh_login} git@github.com:{gh_login}/{repo_name}.git\n")
         f.write(f"git fetch {gh_login}\n")
-        f.write(f"git merge --no-edit {gh_login}/{ref_name}\n")
+        f.write(f"git merge --squash {gh_login}/{ref_name} -m '{pr_title} (#{pr_number})'\n")
         f.write("\n")
     f.close()
 
