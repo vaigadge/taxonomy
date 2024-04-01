@@ -1,0 +1,135 @@
+created_by: hemslo
+seed_examples:
+- answer: |
+    {
+        "location": "Sydney",
+        "temperature": 25,
+        "condition": "sunny"
+    }
+  context: |
+    {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string"
+        },
+        "temperature": {
+          "type": "integer"
+        },
+        "condition": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "location"
+      ]
+    }
+  question: |
+    Extract a valid JSON blob from input that matches the following JSON Schema.
+    The response must only contain the JSON blob.
+    Input: Sydney is 25 degrees and sunny.
+- answer: |
+    {
+        "location": "Sydney",
+        "condition": "raining"
+    }
+  context: |
+    {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string"
+        },
+        "temperature": {
+          "type": "integer"
+        },
+        "condition": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "location"
+      ]
+    }
+  question: |
+    Extract a valid JSON blob from input that matches the following JSON Schema.
+    The response must only contain the JSON blob.
+    Input: Sydney is raining.
+- answer: |
+    {
+        "location": "Sydney",
+        "temperature": 25
+    }
+  context: |
+    {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string"
+        },
+        "temperature": {
+          "type": "integer"
+        },
+        "condition": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "location"
+      ]
+    }
+  question: |
+    Extract a valid JSON blob from input that matches the following JSON Schema.
+    The response must only contain the JSON blob.
+    Input: Sydney is 25 degrees.
+- answer: |
+    {
+        "name": "Bob",
+        "age": 10
+    }
+  context: |
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "name",
+        "age"
+      ]
+    }
+  question: |
+    Extract a valid JSON blob from input that matches the following JSON Schema.
+    The response must only contain the JSON blob.
+    Input: Bob is 10 years old.
+- answer: |
+    {
+        "name": "Alice",
+        "age": 10
+    }
+  context: |
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "name",
+        "age"
+      ]
+    }
+  question: |
+    Extract a valid JSON blob from input that matches the following JSON Schema.
+    The response must only contain the JSON blob.
+    Input: Alice was born a decade ago.
+task_description: 'Extract information in structured JSON formats'
