@@ -1,0 +1,52 @@
+version: 2
+task_description: Logcollection packages
+created_by: VG
+domain: Software Development
+seed_examples:
+  - question: What are the Logcollection packages in Fusion?
+    answer: |
+      Nodes, Network switches, Global data platform , System Health check, Administration,
+      Data catalog, Data foundation
+  - question: What is available in ibm-spectrum-fusion-ns or fusion namespace?
+    answer: |
+      All the ocp resources of fusion namespace like routes, pods logs, deployments, deamon sets,
+      persistent volumes, and config maps
+  - question: What is inside the logcollection package of Nodes?
+    answer: |
+      It contains the logs and object definition files for all major resources in ibm-spectrum-fusion-ns namespace.
+      For example, routes, pods logs,deployments, deamon sets, persistent volumes, and config maps
+  - question: How to debug the issue in fusion?
+    answer: |
+      Collect log packages and raise a ticket and report the issue
+  - question: What is inside the logcollection pacakge of Administration?
+    answer: |
+      The administration log package mainly contains logs related to OpenShift, administration, and audit logging.
+      For example folders of resources like Control-0-rack, Kube, OAuth and OpenShift must-gather.
+  - question: what is inside the logcollection package of Global data platform or GDP?
+    answer: |
+      The Global Data Platform log package mainly contains the folders for the following namespaces. For example it
+      includes resources of namespaces like ibm-spectrum-scale-namespace, ibm-spectrum-scale-csi-namespace,
+      ibm-spectrum-scale-operator-namespace,gpfs snap logs.
+  - question: what is inside the logcollection package of System Health check?
+    answer: |
+      Logs related to overall assessment of the health of IBM Storage Fusion HCI System. The system health check log
+      package mainly contains the folders for the following namespaces. For example resources like Node Metrics,
+      ibm-spectrum-fusion-pod-metric,IMM-logs, Switch Logs, clncl, genic, scpcl, Baremetalhosts,
+      Machinesets, Machines,network configuration policy.
+  - question: what is inside the logcollection package of Data catalog?
+    answer: |
+      The Data Cataloging log package mainly contains the folders for the following namespace. For example it
+      include resources like OCP must gather,Audit logs ,Control-0-rack, Kube, OAuth, and OpenShift.
+  - question: What is inside the logcollection package of Network switches?
+    answer: |
+      Logs related to appliance network errors and connectivity. The network switches log package mainly contains the
+      folders for the network resources. For example it include resources like VLans,Links,switches,switch logs,
+      clncl,genic,scpcl.
+  - question: what is inside the logcollection package of Data foundation?
+    answer: |
+      The Red Hat OpenShift Data Foundation log package mainly contains the
+      logs of Openshift-storage and Openshift-local-storage.
+  - question: what is inside the logcollection package of Backup and restore?
+    answer: |
+      The backup and restore log package mainly contains the resources related to backup and restore service.
+      For example it include resources of namespace like ibm-backup-restore.
